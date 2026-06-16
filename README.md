@@ -1,26 +1,40 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&height=300&text=Gabriel%20Santos&fontSize=72&fontColor=00FF66&color=0,0D1117,0,1a1a2e,0,00FF66&stroke=00FF66&strokeWidth=2&animation=fadeIn&desc=Backend%20Engineer%20%E2%80%A2%20Systems%20Architect%20%E2%80%A2%20CEUB&descSize=18&descFontColor=8892b0&descAlignY=80" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=venom&height=300&text=Gabriel%20Santos&fontSize=72&fontColor=00FF66&color=0,0D1117,0,1a1a2e,0,00FF66&stroke=00FF66&strokeWidth=2&animation=fadeIn&desc=Backend%20Engineer%20%E2%80%A2%20Systems%20Architect%20%E2%80%A2%20CEUB%20%E2%80%A2%20Brasília&descSize=18&descFontColor=8892b0&descAlignY=80" width="100%" />
 
 <br>
 
-<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=760&height=60&lines=⚡+GABRIEL+SANTOS+—+BACKEND+ENGINEER;🚀+NEMESIS+ENGINE+v0.1-alpha+ONLINE;🎓+COMPUTER+SCIENCE+%40+CEUB;🔧+TCP%2FUDP+·+ASYNC+I%2FO+·+LOW+LATENCY;🇧🇷+NJ10+RUMO+À+COPA+2026+🏆" alt="Typing SVG" />
+<!-- NOME + PEPE NAS LATERAIS -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="90" align="right" valign="middle">
+  <img src="./assets/pepe.gif" width="72" />
+</td>
+<td align="center" valign="middle" style="padding: 0 24px;">
+
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=⚡+GABRIEL+SANTOS+—+BACKEND+ENGINEER;🚀+NEMESIS+ENGINE+v0.1-alpha+ONLINE;🎓+CIÊNCIA+DA+COMPUTAÇÃO+%40+CEUB;🔧+TCP%2FUDP+·+ASYNC+I%2FO+·+LOW+LATENCY;💾+BACKPRESSURE+·+BULK+INGESTION;🇧🇷+NJ10+RUMO+À+COPA+2026+🏆" alt="Typing SVG" />
+
+</td>
+<td width="90" align="left" valign="middle">
+  <img src="./assets/pepe.gif" width="72" />
+</td>
+</tr>
+</table>
 
 <br>
 
-<img src="https://media.giphy.com/media/vV8S67E8f3B8G9DStI/giphy.gif" width="80" title="Megaman" />
-&nbsp;&nbsp;
-<img src="https://media.giphy.com/media/2wS8GqfSm8x8Yw70K8/giphy.gif" width="75" title="Sonic" />
-&nbsp;&nbsp;
-<img src="https://media.giphy.com/media/X8gP7pTjQvG0H65S7e/giphy.gif" width="110" title="NJ10 Copa 2026" />
-&nbsp;&nbsp;
-<img src="https://media.giphy.com/media/lo9SqN6956zS1wW74T/giphy.gif" width="70" title="Mario" />
-&nbsp;&nbsp;
-<img src="https://media.giphy.com/media/LMt9638dO8dftAjtco/giphy.gif" width="70" title="Python" />
+<!-- PERSONAGENS -->
+<img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="90" title="Neymar Jr" />
+&nbsp;&nbsp;&nbsp;
+<img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="75" title="Mario" />
+&nbsp;&nbsp;&nbsp;
+<img src="./assets/source.gif" width="80" title="Gamer" />
 
 <br><br>
 
 ---
+
+</div>
 
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
@@ -28,10 +42,10 @@
 ╠══════════════════════════════════════════════════════════════════════╣
 ║                                                                      ║
 ║  Gabriel Santos — Backend Engineer & CS Student @ CEUB              ║
-║  Brasília, DF  ·  Construindo o NEMESIS ENGINE                      ║
+║  Brasília, DF  ·  ETEC Informática → CEUB Ciência da Computação    ║
 ║                                                                      ║
-║  > Motores de ingestão tolerantes a falhas                          ║
-║  > Backpressure · Sockets TCP/UDP · I/O de baixo nível             ║
+║  > Engenheiro orientado a sistemas distribuídos e dados             ║
+║  > Backpressure · Sockets TCP/UDP · Bulk Ingestion                  ║
 ║  > Se roda, eu otimizo. Se travar, eu debugo.                       ║
 ║  > Torcedor do Ney desde quando ele driblava na areia. 🇧🇷           ║
 ║                                                                      ║
@@ -39,6 +53,8 @@
 ```
 
 ---
+
+<div align="center">
 
 ### `[ STACK ]`
 
@@ -57,9 +73,40 @@
   <img src="https://img.shields.io/badge/Fault%20Tolerant-Ingestion%20Engine-00FF66?style=for-the-badge&labelColor=0D1117" />
 </p>
 
+</div>
+
 ---
 
-### `[ NEMESIS ENGINE ]`
+### `[ SOBRE ]` — Quem é Gabriel Santos
+
+<img align="right" src="./assets/download.jpg" width="90" style="margin-left:16px; border-radius:8px;" />
+
+Gabriel Santos é estudante de **Ciência da Computação no CEUB** com formação técnica em **Redes de Computadores** e **Informática pela ETEC** — uma combinação que poucos desenvolvedores em início de carreira possuem: domínio do software integrado à infraestrutura.
+
+Graças ao seu background em redes, ele compreende profundamente a camada de transporte, o comportamento de buffers de sockets no SO e o impacto direto do tráfego de rede na performance da aplicação.
+
+<br>
+
+### `[ ENGENHARIA ]` — Capacidade Técnica
+
+<img align="left" src="./assets/pepe.gif" width="60" style="margin-right:16px;" />
+
+Diferente de profissionais que dependem de frameworks de alto nível, Gabriel codifica soluções nativas e robustas. Isso ficou provado no desenvolvimento do **Nemesis Engine**: um motor de ingestão de dados de alta performance com sockets nativos, concorrência gerenciada e estruturas de dados otimizadas — como `collections.deque` para garantir operações **O(1)** e eliminar gargalos de forma cirúrgica.
+
+<br><br>
+
+### `[ ARQUITETURA ]` — Resolução de Gargalos Críticos
+
+| Problema | Solução implementada |
+| :--- | :--- |
+| **Saturação de memória RAM** | High Watermark — gatilho que para a leitura do socket antes do OOM |
+| **Overhead de I/O em disco** | Bulk Flush — acúmulo em memória + escrita unificada em lote |
+| **Instabilidade sob carga** | Backpressure ativo — o produtor desacelera quando o buffer enche |
+| **Perda de dados em falha** | Retry orchestration com filas tolerantes a falha |
+
+---
+
+### `[ NEMESIS ENGINE ]` — O que estou construindo
 
 ```python
 # nemesis_engine/core.py  ·  v0.1-alpha  ·  by Gabriel Santos
@@ -68,6 +115,10 @@ class NemesisEngine:
     """
     Motor de ingestão de dados de alta vazão.
     Fault-tolerant · Backpressure-aware · Low-latency
+    ──────────────────────────────────────────────────
+    collections.deque  →  O(1) enqueue/dequeue
+    High Watermark     →  previne OOM proativamente
+    Bulk Flush         →  I/O amortecido em lote
     """
 
     def __init__(self):
@@ -76,13 +127,28 @@ class NemesisEngine:
         self.stack         = ["Python", "PostgreSQL", "Docker", "Linux"]
         self.protocols     = ["TCP", "UDP", "WebSocket"]
         self.current_focus = "Memory-efficient buffering + retry orchestration"
-        self.hype          = "🇧🇷 NJ10 campeão 2026."
 
     def run(self) -> str:
         return "⚡ NEMESIS ENGINE — sistemas em plena carga."
 ```
 
 ---
+
+### `[ POSICIONAMENTO ]` — Onde atuo no mercado
+
+<img align="right" src="./assets/source.gif" width="90" style="margin-left:16px;" />
+
+Gabriel não é só um programador de scripts — é um **Engenheiro de Software Backend orientado a Sistemas Distribuídos e Arquitetura de Dados**. Seu perfil atende diretamente às demandas de:
+
+- **Platform Engineering** — construção dos motores internos de plataforma
+- **Infraestrutura de Software** — pipelines de ingestão de alta vazão
+- **Core Engine Teams** — sistemas que sustentam aplicações de grande porte
+
+<br>
+
+---
+
+<div align="center">
 
 ### `[ STATS ]`
 
@@ -94,6 +160,10 @@ class NemesisEngine:
 
 <p>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=GabrielSantMAc&theme=tokyonight&hide_border=true&background=0D1117&stroke=00FF66&ring=00FF66&fire=FF6B35&currStreakLabel=00FF66&sideLabels=8892b0&dates=8892b0" width="60%" />
+</p>
+
+<p>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=GabrielSantMAc&bg_color=0D1117&color=00FF66&line=00FF66&point=FFFFFF&area=true&hide_border=true&area_color=00FF6622" width="90%" />
 </p>
 
 ---
