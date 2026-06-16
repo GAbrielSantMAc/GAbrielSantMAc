@@ -80,7 +80,7 @@
 ║  > Motores de ingestão tolerantes a falhas                          ║
 ║  > Backpressure · Sockets TCP/UDP · I/O de baixo nível             ║
 ║  > Se roda, eu otimizo. Se travar, eu debugo.                       ║
-║  > Torcedor do Ney desde quando ele driblava na areia.              ║
+║                                                                      ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
