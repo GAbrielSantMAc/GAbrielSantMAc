@@ -12,7 +12,7 @@
 </td>
 <td align="center" valign="middle" style="padding: 0 24px;">
 
-<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=⚡+GABRIEL+SANTOS+—+BACKEND+ENGINEER;🚀+NEMESIS+ENGINE+v0.1-alpha+ONLINE;🎓+CIÊNCIA+DA+COMPUTAÇÃO+%40+CEUB;🔧+TCP%2FUDP+·+ASYNC+I%2FO+·+LOW+LATENCY;💾+BACKPRESSURE+·+BULK+INGESTION;🇧🇷+NJ10+RUMO+À+COPA+2026+🏆" alt="Typing SVG" />
+[<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=⚡+GABRIEL+SANTOS+—+BACKEND+ENGINEER;🚀+NEMESIS+ENGINE+v0.1-alpha+ONLINE;🎓+CIÊNCIA+DA+COMPUTAÇÃO+%40+CEUB;🔧+TCP%2FUDP+·+ASYNC+I%2FO+·+LOW+LATENCY;💾+BACKPRESSURE+·+BULK+INGESTION;🇧🇷+NJ10+RUMO+À+COPA+2026+🏆" alt="Typing SVG" />](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=GABRIEL+SANTOS+%E2%80%94+BACKEND+ENGINEER;NEMESIS+ENGINE+v0.1-alpha+ONLINE;CIENCIA+DA+COMPUTACAO+%40+CEUB;TCP%2FUDP+%C2%B7+ASYNC+I%2FO+%C2%B7+LOW+LATENCY;BACKPRESSURE+%C2%B7+BULK+INGESTION;NJ10+RUMO+A+COPA+2026)
 
 </td>
 <td width="90" align="left" valign="middle">
