@@ -2,38 +2,33 @@
 
 <img src="https://capsule-render.vercel.app/api?type=venom&height=300&text=Gabriel%20Santos&fontSize=72&fontColor=00FF66&color=0,0D1117,0,1a1a2e,0,00FF66&stroke=00FF66&strokeWidth=2&animation=fadeIn&desc=Backend%20Engineer%20%E2%80%A2%20Systems%20Architect%20%E2%80%A2%20CEUB%20%E2%80%A2%20Brasília&descSize=18&descFontColor=8892b0&descAlignY=80" width="100%" />
 
+</div>
+
 <br>
 
-<!-- NEY + TYPING + MARIO -->
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td width="110" align="center" valign="middle">
-  <img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="95" title="Neymar Jr" />
-</td>
-<td align="center" valign="middle" style="padding: 0 20px;">
+<!-- NEY (extrema esquerda, solto, grande) -->
+<img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="160" align="left" title="Neymar Jr" style="margin-right: 20px;" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=24&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=680&height=56&lines=GABRIEL+SANTOS+%E2%80%94+BACKEND+ENGINEER;NEMESIS+ENGINE+v0.1-alpha+ONLINE;CIENCIA+DA+COMPUTACAO+%40+CEUB;TCP%2FUDP+%C2%B7+ASYNC+I%2FO+%C2%B7+LOW+LATENCY;BACKPRESSURE+%C2%B7+BULK+INGESTION;NJ10+RUMO+A+COPA+2026" alt="Typing SVG" />
+<!-- MARIO (extrema direita, solto, grande) -->
+<img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="140" align="right" title="Mario" style="margin-left: 20px;" />
 
-</td>
-<td width="110" align="center" valign="middle">
-  <img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="85" title="Mario" />
-</td>
-</tr>
-</table>
+<div align="center">
 
-<br><br>
-
----
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=24&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=680&height=56&lines=GABRIEL+SANTOS+%E2%80%94+BACKEND+ENGINEER;NEMESIS+ENGINE+v0.1-alpha+ONLINE;ANALISE+E+DESENVOLVIMENTO+DE+SISTEMAS+%40+CEUB;TCP%2FUDP+%C2%B7+ASYNC+I%2FO+%C2%B7+LOW+LATENCY;BACKPRESSURE+%C2%B7+BULK+INGESTION;NJ10+RUMO+A+COPA+2026" alt="Typing SVG" />
 
 </div>
+
+<br clear="both" /><br>
+
+---
 
 ```
 ╔══════════════════════════════════════════════════════════════════════╗
 ║  root@nemesis:~$ whoami                                             ║
 ╠══════════════════════════════════════════════════════════════════════╣
 ║                                                                      ║
-║  Gabriel Santos — Backend Engineer & CS Student @ CEUB              ║
-║  Brasília, DF  ·  ETEC Informática → CEUB Ciência da Computação    ║
+║  Gabriel Santos — Backend Engineer & ADS Student @ CEUB             ║
+║  Brasília, DF  ·  ETEC Informática → CEUB Análise e Des. Sistemas  ║
 ║                                                                      ║
 ║  > Engenheiro orientado a sistemas distribuídos e dados             ║
 ║  > Backpressure · Sockets TCP/UDP · Bulk Ingestion                  ║
@@ -72,7 +67,7 @@
 
 <img align="right" src="./assets/download.jpg" width="90" style="margin-left:16px; border-radius:8px;" />
 
-Gabriel Santos é estudante de **Ciência da Computação no CEUB** com formação técnica em **Redes de Computadores** e **Informática pela ETEC** — uma combinação que poucos desenvolvedores em início de carreira possuem: domínio do software integrado à infraestrutura.
+Gabriel Santos é estudante de **Análise e Desenvolvimento de Sistemas no CEUB** com formação técnica em **Redes de Computadores** e **Informática pela ETEC** — uma combinação que poucos desenvolvedores em início de carreira possuem: domínio do software integrado à infraestrutura.
 
 Graças ao seu background em redes, ele compreende profundamente a camada de transporte, o comportamento de buffers de sockets no SO e o impacto direto do tráfego de rede na performance da aplicação.
 
