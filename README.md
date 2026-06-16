@@ -1,6 +1,4 @@
 <!-- HEADER BANNER -->
-<!-- NEY — extrema esquerda, grande, solto -->
-<img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="180" align="left" title="Neymar Jr" />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&height=280&text=Gabriel%20Santos&fontSize=72&fontColor=00FF66&color=0,0D1117,50,1a1a2e,100,0D1117&stroke=00FF66&strokeWidth=1&animation=fadeIn&desc=Backend%20Engineer%20%E2%80%A2%20ADS%20%40%20CEUB%20%E2%80%A2%20Bras%C3%ADlia&descSize=18&descFontColor=8892b0&descAlignY=78&section=header" width="100%" />
 
