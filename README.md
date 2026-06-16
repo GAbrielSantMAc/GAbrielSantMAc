@@ -1,70 +1,115 @@
-<div align="center">
-
-# 𝔊𝔞𝔟𝔯𝔦𝔢𝔩 𝔖𝔞𝔫𝔱𝔬𝔰
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzRtcG9tb3FtcHd1Y2dqMXRscTh6bWF6N3g3eTl6N2Fma3dtczR6diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/X8gP7pTjQvG0H65S7e/giphy.gif" width="120" alt="Neymar Hexa" />
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&pause=800&color=00FF66&center=true&vCenter=true&width=600&lines=⚡+BUILDING+NEMESIS+ENGINE;🚀+BACKEND+AND+SYSTEMS+ENGINEER;🎓+COMPUTER+SCIENCE+@+CEUB;🤖+HIGH-THROUGHPUT+DATA+PIPELINES" alt="Typing SVG" />
-
-<p align="center">
-  <b>Estudante de Ciência da Computação focado em quebrar gargalos de infraestrutura.</b><br>
-  Desenvolvendo motores de ingestão tolerantes a falhas, controle de vazão (Backpressure) e otimização de I/O em nível de baixo nível.
-</p>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM29hbzZ6dzE4N2NidXo4M2k3eTY4amowc2EwbWZ6cHk5bThidTJjdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/vV8S67E8f3B8G9DStI/giphy.gif" width="80" alt="Megaman" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdm4yNThhdGZscWxhYzAwd3p4NmdmMDhxMG55ODdqZGxhZzJna204MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/2wS8GqfSm8x8Yw70K8/giphy.gif" width="70" alt="Sonic" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3Y1NXZ5cjV4Mnd4OWR0bHFpaW00MDN2MDM4djhzMXU0NHYyNTk4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lo9SqN6956zS1wW74T/giphy.gif" width="70" alt="Mario" />
-</p>
+<img src="https://komarev.com/ghpvc/?username=GabrielSantMAc&label=PROFILE+VIEWS&color=00FF66&style=for-the-badge&labelColor=0D1117" />
 
 ---
 
-### 🎛️ My Control Panel (Tech Stack)
+<!-- ═══════════════════════ TECH STACK ══════════════════════════════ -->
+
+### 🎛️ CONTROL PANEL — Tech Stack
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" />
+  &nbsp;
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+  &nbsp;
   <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  &nbsp;
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  &nbsp;
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/TCP%2FUDP-Socket%20Engineering-00FF66?style=for-the-badge&logoColor=white&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Async%20I%2FO-Backpressure%20Control-00FF66?style=for-the-badge&logoColor=white&labelColor=0D1117" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Fault%20Tolerant-Ingestion%20Engine-00FF66?style=for-the-badge&logoColor=white&labelColor=0D1117" />
+</p>
+
 ---
 
-### 📊 Performance & Core Metrics
+<!-- ═══════════════════ PERFORMANCE METRICS ══════════════════════════ -->
 
-| Core Engineering | Level Status | Latency / Load |
+### 📊 PERFORMANCE & CORE METRICS — `NEMESIS ENGINE v0.1`
+
+| 🔬 Core Engineering Module | ██ Load Meter | ⚡ Status |
 | :--- | :---: | :---: |
-| **Python Backend Architecture** | `🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜` | **Low Latency** |
-| **Network Sockets (TCP/UDP)** | `🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜` | **High Throughput** |
-| **Memory Buffering & Collections** | `🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜` | **O(1) Efficiency** |
-| **Database Optimization** | `🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜` | **Bulk Ingestion** |
+| **Python Backend Architecture** | `🟩🟩🟩🟩🟩🟩🟩🟩⬜⬜` `80%` | `LOW LATENCY` |
+| **Network Sockets (TCP/UDP)** | `🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜` `70%` | `HIGH THROUGHPUT` |
+| **Memory Buffering & Collections** | `🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜` `60%` | `O(1) EFFICIENCY` |
+| **Database Optimization** | `🟩🟩🟩🟩🟩⬜⬜⬜⬜⬜` `50%` | `BULK INGESTION` |
+| **Fault Tolerance / Retry Logic** | `🟩🟩🟩🟩🟩🟩🟩⬜⬜⬜` `70%` | `RESILIENT` |
+| **Async I/O & Backpressure** | `🟩🟩🟩🟩🟩🟩⬜⬜⬜⬜` `60%` | `FLOW CONTROL` |
 
 ---
 
-### 📈 GitHub Stats (Modo Hacker Ativado)
+<!-- ════════════════════════ GITHUB STATS ════════════════════════════ -->
+
+### 📈 GITHUB STATS — `HACKER MODE: ON`
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=GabrielSantMAc&show_icons=true&theme=tokyonight&count_private=true" alt="Gabriel's GitHub Stats" />
-  <br>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GabrielSantMAc&theme=tokyonight" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=GabrielSantMAc&show_icons=true&theme=tokyonight&count_private=true&hide_border=true&bg_color=0D1117&title_color=00FF66&icon_color=00FF66&text_color=8892b0&ring_color=00FF66" width="48%" />
+  &nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=GabrielSantMAc&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00FF66&text_color=8892b0" width="38%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=GabrielSantMAc&theme=tokyonight&hide_border=true&background=0D1117&stroke=00FF66&ring=00FF66&fire=FF6B35&currStreakLabel=00FF66&sideLabels=8892b0&dates=8892b0" width="60%" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=GabrielSantMAc&bg_color=0D1117&color=00FF66&line=00FF66&point=FFFFFF&area=true&hide_border=true&area_color=00FF6620" width="90%" />
 </p>
 
 ---
 
-### 📫 Telemetry Connection (Fale Comigo)
+<!-- ══════════════════ WHAT I'M BUILDING ══════════════════════════════ -->
+
+### 🛠️ CURRENTLY BUILDING — `NEMESIS ENGINE`
+
+```python
+# nemesis_engine/core.py  —  v0.1-alpha
+
+class NemesisEngine:
+    """
+    High-throughput data ingestion engine.
+    Fault-tolerant · Backpressure-aware · Low-latency
+    """
+
+    def __init__(self):
+        self.status        = "🟢 ONLINE"
+        self.stack         = ["Python", "PostgreSQL", "Docker", "Linux"]
+        self.protocols     = ["TCP", "UDP", "WebSocket"]
+        self.current_focus = "Memory-efficient buffering + retry orchestration"
+
+    def run(self) -> str:
+        return "⚡ NEMESIS ENGINE — Systems at full throttle."
+```
+
+---
+
+<!-- ══════════════════════ CONTACT ════════════════════════════════════ -->
+
+### 📡 TELEMETRY — Fale Comigo
 
 <p align="center">
+  <a href="https://github.com/GabrielSantMAc" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-GabrielSantMAc-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  &nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/gabriel-santos-de-macedo-16b40135a/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/LinkedIn-Gabriel%20Santos-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
   <a href="mailto:gabriel.santosm@sempreceub.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+    <img src="https://img.shields.io/badge/Email-gabriel.santosm%40sempreceub.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0D0D0D,1A1A2E,00FF66&height=120&section=footer&text=Keep+Building.+Never+Stop.&fontSize=22&fontColor=00FF66&animation=twinkling&fontAlignY=70" width="100%" />
 
 </div>
