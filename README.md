@@ -21,7 +21,7 @@
 
 <div align="center">
 
-🟢 **[→ VER DASHBOARD COM STATS EM TEMPO REAL ←](https://GabrielSantMAc.github.io)**
+🟢 **[→ VER DASHBOARD COM STATS EM TEMPO REAL ←](https://gabrielsantmac.github.io/GAbrielSantMAc/)**
 
 *Gráficos ao vivo · Atividade · Repos · Streak — atualiza a cada 5 minutos*
 
