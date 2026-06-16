@@ -1,6 +1,5 @@
 <div align="center">
 
-!-- NEY (extrema esquerda, solto, grande) -->
 <img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="230" align="left" title="Neymar Jr" style="margin-right: 40px;" />
 
 <img src="https://capsule-render.vercel.app/api?type=venom&height=300&text=Gabriel%20Santos&fontSize=72&fontColor=00FF66&color=0,0D1117,0,1a1a2e,0,00FF66&stroke=00FF66&strokeWidth=2&animation=fadeIn&desc=Backend%20Engineer%20%E2%80%A2%20Systems%20Architect%20%E2%80%A2%20CEUB%20%E2%80%A2%20Brasília&descSize=18&descFontColor=8892b0&descAlignY=80" width="100%" />
@@ -8,9 +7,6 @@
 </div>
 
 <br>
-
-<!-- NEY (extrema esquerda, solto, grande) -->
-<img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="160" align="left" title="Neymar Jr" style="margin-right: 20px;" />
 
 <!-- MARIO (extrema direita, solto, grande) -->
 <img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="140" align="right" title="Mario" style="margin-left: 20px;" />
