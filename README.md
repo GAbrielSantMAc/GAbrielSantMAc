@@ -4,31 +4,22 @@
 
 <br>
 
-<!-- NOME + PEPE NAS LATERAIS -->
+<!-- NEY + TYPING + MARIO -->
 <table border="0" cellpadding="0" cellspacing="0">
 <tr>
-<td width="90" align="right" valign="middle">
-  <img src="./assets/pepe.gif" width="72" />
+<td width="110" align="center" valign="middle">
+  <img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="95" title="Neymar Jr" />
 </td>
-<td align="center" valign="middle" style="padding: 0 24px;">
+<td align="center" valign="middle" style="padding: 0 20px;">
 
-[<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=⚡+GABRIEL+SANTOS+—+BACKEND+ENGINEER;🚀+NEMESIS+ENGINE+v0.1-alpha+ONLINE;🎓+CIÊNCIA+DA+COMPUTAÇÃO+%40+CEUB;🔧+TCP%2FUDP+·+ASYNC+I%2FO+·+LOW+LATENCY;💾+BACKPRESSURE+·+BULK+INGESTION;🇧🇷+NJ10+RUMO+À+COPA+2026+🏆" alt="Typing SVG" />](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=26&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=720&height=58&lines=GABRIEL+SANTOS+%E2%80%94+BACKEND+ENGINEER;NEMESIS+ENGINE+v0.1-alpha+ONLINE;CIENCIA+DA+COMPUTACAO+%40+CEUB;TCP%2FUDP+%C2%B7+ASYNC+I%2FO+%C2%B7+LOW+LATENCY;BACKPRESSURE+%C2%B7+BULK+INGESTION;NJ10+RUMO+A+COPA+2026)
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=900&size=24&duration=1800&pause=600&color=00FF66&center=true&vCenter=true&width=680&height=56&lines=GABRIEL+SANTOS+%E2%80%94+BACKEND+ENGINEER;NEMESIS+ENGINE+v0.1-alpha+ONLINE;CIENCIA+DA+COMPUTACAO+%40+CEUB;TCP%2FUDP+%C2%B7+ASYNC+I%2FO+%C2%B7+LOW+LATENCY;BACKPRESSURE+%C2%B7+BULK+INGESTION;NJ10+RUMO+A+COPA+2026" alt="Typing SVG" />
 
 </td>
-<td width="90" align="left" valign="middle">
-  <img src="./assets/pepe.gif" width="72" />
+<td width="110" align="center" valign="middle">
+  <img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="85" title="Mario" />
 </td>
 </tr>
 </table>
-
-<br>
-
-<!-- PERSONAGENS -->
-<img src="./assets/2f3abaaf25b5d45cbfc50a00e79fc448.gif" width="90" title="Neymar Jr" />
-&nbsp;&nbsp;&nbsp;
-<img src="./assets/3cf442eb0574a06127a2db3a6bd6e633.gif" width="75" title="Mario" />
-&nbsp;&nbsp;&nbsp;
-<img src="./assets/source.gif" width="80" title="Gamer" />
 
 <br><br>
 
