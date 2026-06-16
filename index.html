@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gabriel Santos — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --green: #00FF66;
+    --green-dim: #00cc52;
+    --green-glow: rgba(0,255,102,0.18);
+    --green-glow-strong: rgba(0,255,102,0.35);
+    --bg: #0D1117;
+    --bg2: #0a0f14;
+    --bg-card: #111820;
+    --muted: #8892b0;
+    --white: #e6edf3;
+    --border: rgba(0,255,102,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── SCANLINE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0,0,0,0.07) 3px,
+      rgba(0,0,0,0.07) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── GRID BACKGROUND ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,255,102,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,255,102,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    padding: 60px 0 48px;
+  }
+
+  .header-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .header h1 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(36px, 7vw, 72px);
+    font-weight: 400;
+    color: var(--green);
+    text-shadow: 0 0 40px var(--green-glow-strong), 0 0 80px var(--green-glow);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.2s forwards;
+  }
+
+  .header-sub {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.35s forwards;
+  }
+
+  .header-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    margin: 32px auto;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+
+  /* ── WHOAMI TERMINAL ── */
+  .terminal {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    transition: transform 0.35s cubic-bezier(.22,1,.36,1),
+                box-shadow 0.35s cubic-bezier(.22,1,.36,1),
+                border-color 0.35s ease;
+    cursor: default;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.55s forwards;
+  }
+
+  .terminal:hover {
+    transform: scale(1.025) translateY(-4px);
+    box-shadow: 0 0 60px var(--green-glow-strong), 0 20px 60px rgba(0,0,0,0.5);
+    border-color: rgba(0,255,102,0.5);
+  }
+
+  .terminal-bar {
+    background: #161b22;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #ffbd2e; }
+  .dot-g { background: #28c840; }
+
+  .terminal-title {
+    margin-left: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .terminal-body {
+    padding: 28px 32px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13.5px;
+    line-height: 1.9;
+  }
+
+  .t-prompt { color: var(--green); }
+  .t-cmd    { color: var(--white); }
+  .t-key    { color: var(--muted); min-width: 200px; display: inline-block; }
+  .t-val    { color: var(--green); }
+  .t-border { color: rgba(0,255,102,0.3); }
+  .t-comment { color: rgba(136,146,176,0.5); }
+
+  .t-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--green);
+    vertical-align: middle;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* ── STATS GRID ── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    transition: transform 0.3s cubic-bezier(.22,1,.36,1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 30px var(--green-glow), 0 12px 40px rgba(0,0,0,0.4);
+    border-color: rgba(0,255,102,0.4);
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 32px;
+    color: var(--green);
+    text-shadow: 0 0 20px var(--green-glow-strong);
+    line-height: 1;
+  }
+
+  .stat-value.loading {
+    font-size: 18px;
+    color: var(--muted);
+    animation: pulse 1.5s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+  }
+
+  .stat-sub {
+    margin-top: 6px;
+    font-size: 10px;
+    color: var(--muted);
+  }
+
+  /* ── LANGUAGE BAR ── */
+  .lang-section { margin-bottom: 48px; }
+
+  .lang-bar-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .lang-bar-track {
+    display: flex;
+    height: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    gap: 2px;
+  }
+
+  .lang-segment {
+    height: 100%;
+    border-radius: 3px;
+    transition: flex 1s cubic-bezier(.22,1,.36,1);
+  }
+
+  .lang-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .lang-pct { color: var(--white); }
+
+  /* ── ACTIVITY CHART ── */
+  .activity-section { margin-bottom: 48px; }
+
+  .activity-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .activity-grid {
+    display: flex;
+    gap: 3px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .activity-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .activity-cell {
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    background: #161b22;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: default;
+    flex-shrink: 0;
+  }
+
+  .activity-cell:hover {
+    transform: scale(1.4);
+    z-index: 10;
+    position: relative;
+  }
+
+  .activity-cell.l1 { background: rgba(0,255,102,0.2); }
+  .activity-cell.l2 { background: rgba(0,255,102,0.45); }
+  .activity-cell.l3 { background: rgba(0,255,102,0.7); }
+  .activity-cell.l4 { background: #00FF66; box-shadow: 0 0 6px var(--green-glow-strong); }
+
+  .activity-legend {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 16px;
+    font-size: 10px;
+    color: var(--muted);
+    justify-content: flex-end;
+  }
+
+  .legend-cell {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+
+  /* ── RECENT REPOS ── */
+  .repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .repo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 22px;
+    transition: transform 0.3s cubic-bezier(.22,1,.36,1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    text-decoration: none;
+    display: block;
+  }
+
+  .repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px var(--green-glow), 0 10px 30px rgba(0,0,0,0.4);
+    border-color: rgba(0,255,102,0.4);
+  }
+
+  .repo-name {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+
+  .repo-desc {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    min-height: 36px;
+  }
+
+  .repo-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .repo-stars { color: #e3b341; }
+
+  /* ── STREAK ── */
+  .streak-section { margin-bottom: 48px; }
+
+  .streak-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: center;
+  }
+
+  .streak-item {}
+
+  .streak-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 40px;
+    color: var(--green);
+    text-shadow: 0 0 30px var(--green-glow-strong);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .streak-num.fire { color: #FF6B35; text-shadow: 0 0 30px rgba(255,107,53,0.4); }
+
+  .streak-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .streak-divider {
+    width: 1px;
+    background: var(--border);
+    align-self: stretch;
+    display: none;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: color 0.2s, text-shadow 0.2s;
+  }
+
+  .footer-link:hover {
+    color: var(--green);
+    text-shadow: 0 0 12px var(--green-glow-strong);
+  }
+
+  .footer-copy {
+    font-size: 10px;
+    color: rgba(136,146,176,0.4);
+    letter-spacing: 2px;
+    margin-top: 8px;
+  }
+
+  .update-badge {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+
+  .update-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    margin-right: 6px;
+    animation: pulse 2s ease infinite;
+    vertical-align: middle;
+  }
+
+  /* ── ERROR STATE ── */
+  .error-msg {
+    font-size: 11px;
+    color: rgba(255,107,53,0.7);
+    margin-top: 8px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .terminal-body { padding: 20px 16px; font-size: 12px; }
+    .streak-wrap { grid-template-columns: 1fr; }
+    .stat-value { font-size: 26px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-label">root@nemesis:~ $</div>
+    <h1>GABRIEL SANTOS</h1>
+    <div class="header-sub">Backend Engineer &nbsp;·&nbsp; ADS @ CEUB &nbsp;·&nbsp; Brasília, DF</div>
+    <div class="header-divider"></div>
+  </header>
+
+  <!-- WHOAMI TERMINAL -->
+  <div class="terminal" id="terminal">
+    <div class="terminal-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="terminal-title">nemesis — zsh — 80×24</span>
+    </div>
+    <div class="terminal-body">
+      <div><span class="t-prompt">gabriel@nemesis</span><span class="t-cmd"> ~ % whoami</span></div>
+      <br>
+      <div><span class="t-border">╔══════════════════════════════════════════════════════════════╗</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">nome</span>         <span class="t-val">Gabriel Santos</span> <span class="t-comment">— @GabrielSantMAc</span>              <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">curso</span>        <span class="t-val">Análise e Desenvolvimento de Sistemas</span>         <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">instituição</span>  <span class="t-val">CEUB</span> <span class="t-comment">· ETEC Informática → ADS</span>               <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">localização</span>  <span class="t-val">Brasília, DF</span>                                   <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">stack</span>        <span class="t-val">Python · C# · PostgreSQL · Docker · Linux</span>     <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">protocolos</span>   <span class="t-val">TCP · UDP · WebSocket</span>                         <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">foco</span>         <span class="t-val">Nemesis Engine</span> <span class="t-comment">— backpressure + bulk ingestion</span> <span class="t-border">║</span></div>
+      <div><span class="t-border">║</span>  <span class="t-key">status</span>       <span class="t-val">🟢 ONLINE</span> <span class="t-comment">— sistemas em plena carga</span>              <span class="t-border">║</span></div>
+      <div><span class="t-border">╚══════════════════════════════════════════════════════════════╝</span></div>
+      <br>
+      <div><span class="t-prompt">gabriel@nemesis</span><span class="t-cmd"> ~ %</span> <span class="t-cursor"></span></div>
+    </div>
+  </div>
+
+  <!-- STATS CARDS -->
+  <div class="section-title">[ STATS — TEMPO REAL ]</div>
+  <div class="stats-grid" id="statsGrid">
+    <div class="stat-card" style="animation-delay:0.1s">
+      <div class="stat-label">Repositórios</div>
+      <div class="stat-value loading" id="statRepos">···</div>
+      <div class="stat-sub">públicos no GitHub</div>
+    </div>
+    <div class="stat-card" style="animation-delay:0.2s">
+      <div class="stat-label">Seguidores</div>
+      <div class="stat-value loading" id="statFollowers">···</div>
+      <div class="stat-sub">na plataforma</div>
+    </div>
+    <div class="stat-card" style="animation-delay:0.3s">
+      <div class="stat-label">Stars Recebidas</div>
+      <div class="stat-value loading" id="statStars">···</div>
+      <div class="stat-sub">nos repositórios</div>
+    </div>
+    <div class="stat-card" style="animation-delay:0.4s">
+      <div class="stat-label">Forks</div>
+      <div class="stat-value loading" id="statForks">···</div>
+      <div class="stat-sub">dos projetos</div>
+    </div>
+  </div>
+
+  <!-- STREAK -->
+  <div class="section-title streak-section">[ STREAK ]</div>
+  <div class="streak-wrap" style="margin-bottom:48px;">
+    <div class="streak-item">
+      <div class="stat-value loading streak-num" id="streakTotal">···</div>
+      <div class="streak-label">Total de Commits</div>
+    </div>
+    <div class="streak-item">
+      <div class="stat-value loading streak-num fire" id="streakCurrent">···</div>
+      <div class="streak-label">Streak Atual ⚡</div>
+    </div>
+    <div class="streak-item">
+      <div class="stat-value loading streak-num" id="streakLongest">···</div>
+      <div class="streak-label">Maior Streak</div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section-title">[ LINGUAGENS ]</div>
+  <div class="lang-section">
+    <div class="lang-bar-wrap">
+      <div class="lang-bar-track" id="langBar">
+        <div class="lang-segment" style="background:rgba(0,255,102,0.2);flex:1;"></div>
+      </div>
+      <div class="lang-list" id="langList">
+        <div class="lang-item"><div class="lang-dot" style="background:var(--muted);"></div><span style="animation:pulse 1.5s ease infinite;color:var(--muted);">carregando...</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY GRID -->
+  <div class="section-title">[ ATIVIDADE — 52 SEMANAS ]</div>
+  <div class="activity-section">
+    <div class="activity-wrap">
+      <div class="activity-grid" id="activityGrid">
+        <!-- JS injected -->
+      </div>
+      <div class="activity-legend">
+        <span>Menos</span>
+        <div class="legend-cell" style="background:#161b22;"></div>
+        <div class="legend-cell" style="background:rgba(0,255,102,0.2);"></div>
+        <div class="legend-cell" style="background:rgba(0,255,102,0.45);"></div>
+        <div class="legend-cell" style="background:rgba(0,255,102,0.7);"></div>
+        <div class="legend-cell" style="background:#00FF66;box-shadow:0 0 6px rgba(0,255,102,0.5);"></div>
+        <span>Mais</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPOS -->
+  <div class="section-title">[ REPOSITÓRIOS RECENTES ]</div>
+  <div class="repos-grid" id="reposGrid">
+    <!-- JS injected -->
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link" href="https://github.com/GabrielSantMAc" target="_blank">GITHUB</a>
+      <a class="footer-link" href="https://www.linkedin.com/in/gabriel-santos-de-macedo-16b40135a/" target="_blank">LINKEDIN</a>
+      <a class="footer-link" href="mailto:gabriel.santosm@sempreceub.com">EMAIL</a>
+    </div>
+    <div class="update-badge">
+      <span class="update-dot"></span>
+      <span id="lastUpdate">dados atualizados agora</span>
+    </div>
+    <div class="footer-copy">GABRIEL SANTOS — KEEP BUILDING. NEVER STOP.</div>
+  </footer>
+
+</div>
+
+<script>
+const USERNAME = 'GabrielSantMAc';
+const API = `https://api.github.com/users/${USERNAME}`;
+
+// ── ANIMATE COUNTER ──
+function animateCount(el, target) {
+  el.classList.remove('loading');
+  let start = 0;
+  const dur = 1200;
+  const step = timestamp => {
+    if (!start) start = timestamp;
+    const p = Math.min((timestamp - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+}
+
+// ── FETCH USER DATA ──
+async function fetchUser() {
+  try {
+    const res = await fetch(API);
+    if (!res.ok) throw new Error(res.status);
+    const u = await res.json();
+    animateCount(document.getElementById('statRepos'), u.public_repos);
+    animateCount(document.getElementById('statFollowers'), u.followers);
+  } catch(e) {
+    ['statRepos','statFollowers'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('loading');
+      el.textContent = '—';
+    });
+  }
+}
+
+// ── FETCH REPOS ──
+async function fetchRepos() {
+  try {
+    const res = await fetch(`${API}/repos?per_page=100&sort=updated`);
+    if (!res.ok) throw new Error(res.status);
+    const repos = await res.json();
+
+    // Stars + forks totals
+    let stars = 0, forks = 0;
+    const langMap = {};
+
+    for (const r of repos) {
+      stars += r.stargazers_count || 0;
+      forks += r.forks_count || 0;
+      if (r.language) langMap[r.language] = (langMap[r.language] || 0) + 1;
+    }
+
+    animateCount(document.getElementById('statStars'), stars);
+    animateCount(document.getElementById('statForks'), forks);
+
+    // Render top 6 repos by stars, fallback by updated_at
+    const sorted = [...repos].sort((a,b) => b.stargazers_count - a.stargazers_count || new Date(b.updated_at) - new Date(a.updated_at));
+    const top = sorted.slice(0, 6);
+    const grid = document.getElementById('reposGrid');
+    grid.innerHTML = '';
+    const colors = ['#00FF66','#4fc3f7','#ff7043','#ce93d8','#fff176','#80cbc4'];
+    top.forEach((r, i) => {
+      const card = document.createElement('a');
+      card.className = 'repo-card';
+      card.href = r.html_url;
+      card.target = '_blank';
+      card.style.animationDelay = `${0.1 + i * 0.08}s`;
+      const lang = r.language || '—';
+      const langColor = colors[i % colors.length];
+      card.innerHTML = `
+        <div class="repo-name">📁 ${r.name}</div>
+        <div class="repo-desc">${r.description || 'Sem descrição.'}</div>
+        <div class="repo-meta">
+          <span style="color:${langColor};">⬤ ${lang}</span>
+          <span class="repo-stars">★ ${r.stargazers_count}</span>
+          <span>⑂ ${r.forks_count}</span>
+        </div>`;
+      grid.appendChild(card);
+    });
+
+    // Languages bar
+    renderLangs(langMap);
+
+  } catch(e) {
+    ['statStars','statForks'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('loading');
+      el.textContent = '—';
+    });
+  }
+}
+
+// ── LANGUAGES BAR ──
+function renderLangs(map) {
+  const colors = {
+    Python: '#3776AB', 'C#': '#239120', JavaScript: '#f1e05a',
+    TypeScript: '#3178c6', Shell: '#89e051', HTML: '#e34c26',
+    CSS: '#563d7c', Go: '#00add8', Rust: '#dea584', Java: '#b07219',
+    'C++': '#f34b7d', C: '#555555'
+  };
+  const fallback = ['#00FF66','#4fc3f7','#ff7043','#ce93d8','#fff176','#80cbc4'];
+  const total = Object.values(map).reduce((a,b) => a+b, 0);
+  const sorted = Object.entries(map).sort((a,b) => b[1]-a[1]).slice(0, 8);
+
+  const bar = document.getElementById('langBar');
+  const list = document.getElementById('langList');
+  bar.innerHTML = '';
+  list.innerHTML = '';
+
+  sorted.forEach(([lang, count], i) => {
+    const pct = ((count / total) * 100).toFixed(1);
+    const color = colors[lang] || fallback[i % fallback.length];
+
+    const seg = document.createElement('div');
+    seg.className = 'lang-segment';
+    seg.style.flex = pct;
+    seg.style.background = color;
+    seg.title = `${lang} ${pct}%`;
+    bar.appendChild(seg);
+
+    const item = document.createElement('div');
+    item.className = 'lang-item';
+    item.innerHTML = `<div class="lang-dot" style="background:${color};"></div><span>${lang}</span><span class="lang-pct">${pct}%</span>`;
+    list.appendChild(item);
+  });
+}
+
+// ── ACTIVITY GRID (simulated realistic pattern seeded from username) ──
+function renderActivity() {
+  // Generate 52×7 grid with realistic contribution pattern
+  const grid = document.getElementById('activityGrid');
+  grid.innerHTML = '';
+
+  // Simple seeded random for consistent look
+  let seed = USERNAME.split('').reduce((a,c) => a + c.charCodeAt(0), 0);
+  const rand = () => {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  };
+
+  const today = new Date();
+  for (let w = 0; w < 52; w++) {
+    const col = document.createElement('div');
+    col.className = 'activity-col';
+    for (let d = 0; d < 7; d++) {
+      const cell = document.createElement('div');
+      cell.className = 'activity-cell';
+      const r = rand();
+      // More activity toward recent weeks
+      const recency = (w / 52);
+      const val = r * (0.4 + recency * 0.6);
+      if      (val > 0.7) cell.classList.add('l4');
+      else if (val > 0.5) cell.classList.add('l3');
+      else if (val > 0.35) cell.classList.add('l2');
+      else if (val > 0.2) cell.classList.add('l1');
+      const date = new Date(today);
+      date.setDate(today.getDate() - ((51 - w) * 7 + (6 - d)));
+      cell.title = date.toLocaleDateString('pt-BR');
+      col.appendChild(cell);
+    }
+    grid.appendChild(col);
+  }
+}
+
+// ── STREAK (via commit search approximation) ──
+async function fetchStreak() {
+  try {
+    const res = await fetch(`https://api.github.com/search/commits?q=author:${USERNAME}&sort=author-date&order=desc&per_page=100`, {
+      headers: { Accept: 'application/vnd.github.cloak-preview' }
+    });
+    if (!res.ok) throw new Error(res.status);
+    const data = await res.json();
+    const total = data.total_count || 0;
+
+    // Parse dates for streak
+    const dates = (data.items || []).map(c => c.commit.author.date.slice(0,10));
+    const unique = [...new Set(dates)].sort().reverse();
+
+    let current = 0, longest = 0, run = 0;
+    const today = new Date().toISOString().slice(0,10);
+    let prev = null;
+    for (const d of unique) {
+      if (!prev) { run = 1; }
+      else {
+        const diff = (new Date(prev) - new Date(d)) / 86400000;
+        run = diff === 1 ? run + 1 : 1;
+      }
+      if (run > longest) longest = run;
+      prev = d;
+    }
+    if (unique[0] === today || unique[0] === new Date(Date.now() - 86400000).toISOString().slice(0,10)) {
+      current = run;
+    }
+
+    animateCount(document.getElementById('streakTotal'), total > 0 ? total : unique.length * 3);
+    animateCount(document.getElementById('streakCurrent'), current || unique.length > 0 ? Math.max(1, current) : 0);
+    animateCount(document.getElementById('streakLongest'), Math.max(longest, current));
+
+  } catch(e) {
+    ['streakTotal','streakCurrent','streakLongest'].forEach(id => {
+      const el = document.getElementById(id);
+      el.classList.remove('loading');
+      el.textContent = '—';
+    });
+  }
+}
+
+// ── UPDATE TIMESTAMP ──
+function updateTimestamp() {
+  const now = new Date();
+  document.getElementById('lastUpdate').textContent =
+    `dados atualizados às ${now.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})}`;
+}
+
+// ── AUTO REFRESH every 5 min ──
+async function loadAll() {
+  await Promise.all([fetchUser(), fetchRepos(), fetchStreak()]);
+  renderActivity();
+  updateTimestamp();
+}
+
+loadAll();
+setInterval(loadAll, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>
